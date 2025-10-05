@@ -2,73 +2,84 @@
 <p align="center">
 <img width="415" height="439" alt="image" src="https://github.com/user-attachments/assets/df96bc33-cab8-46bb-abb9-735396d228e2" />
 </p>
-<p align="center">
-A custom-built AD lab project simulating a mid-sized company, designed for IT learning and experimentation.
-</p>
 
 ---
 
-## 📖 Company Background – Codex Systems
-Codex Systems was founded by technologists who loved literature. Their vision is to **preserve, analyze, and share human knowledge** using modern technology.  
-
-This fictional company serves as the foundation for our Active Directory lab environment. By blending story with technology, we create a more engaging and realistic enterprise IT simulation.  
+This project documents the deployment of an **Active Directory (AD) environment** for the fictional company **Codex Systems**.  
+The goal was to simulate how a real organization would structure, secure, and manage its domain through OUs, users, security groups, and Group Policy Objects (GPOs).  
 
 ---
 
-## 🏢 Organizational Units (Departments)
-For Phase 1, Codex Systems has been mapped into OUs representing real-world departments:
+## Active Directory Setup
 
-- **IT Infrastructure** – Systems, networking, helpdesk.  
-- **Knowledge Engineering** – Developers and data scientists.  
-- **Publishing & Media** – Editors, creative specialists.  
-- **Operations** – HR, Finance, Legal, Admin.  
-
-Each department is represented as its own **Organizational Unit (OU)** under the root **Codex Systems OU**.  
+- Installed and configured **Windows Server 2025** as a Domain Controller.  
+- Deployed **Active Directory Domain Services (AD DS)** and established the domain `codex.local`.  
+- Verified that domain and DNS services were operating correctly.  
 
 ---
 
-## 🛠️ Lab Configuration (Phase 1 Setup)
-### Domain Controller
-- **Server Name:** `DC-1`  
-- **Role:** Domain Controller for `codex.local`  
-- **Networking:** Static IP configured
+## Organizational Units and Users
 
-  <img width="1718" height="920" alt="image" src="https://github.com/user-attachments/assets/6135b104-0477-46db-a567-63f822bd48f1" />
-<img width="1718" height="920" alt="image" src="https://github.com/user-attachments/assets/8c216e7e-bfca-4143-90fc-6b394ee7e4f2" />
-
-
-
-### Client Machine
-- **Machine Name:** `Client-1`  
-- **Role:** Domain-joined workstation  
-- **Networking:** Configured on same subnet as DC-1
-  
-<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/dd44accf-9585-43a3-9abd-3ac21031f8af" />
-
- <img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/3b54f7c3-f8f8-4e36-a6e7-6273b07f8836" />
-
-
-✅ Client-1 was able to **register with the domain** successfully.  
+- Created Organizational Units (OUs) to represent departments at Codex Systems (e.g., IT, HR, Finance, Sales).  
+- Added fictional user accounts and assigned them to the appropriate OUs.  
+- Configured passwords and logon details to reflect standard onboarding practices.  
 
 ---
 
-## ✅ Completed in Phase 1
-- Domain installed and configured (`codex.local`).  
-- Root OU created: **Codex Systems**.  
-- Department-level OUs established (IT, Knowledge Engineering, Publishing, Operations).  
-- Client-1 joined to the domain.  
+## Security Groups
+
+- Built **security groups** to streamline access management.  
+- Groups were aligned with departments (e.g., “HR_Group”, “IT_Group”) and users were added to their respective groups.  
+- This allowed centralized management of access rights without needing to adjust each user individually.  
 
 ---
 
-## 🔮 Next Steps (Phase 2 Preview)
-- Populate users in each department (Executive, IT, Research, Publishing, Operations, Sales).  
-- Establish baseline Group Policy Objects (password complexity, lockout policies).  
-- Begin testing with domain logins from Client-1.  
+## Group Policy Objects (GPOs)
+
+Configured several GPOs to enforce company standards across the domain:
+
+- **Password Policy** → Enforced complexity requirements and expiration rules.  
+- **Desktop Wallpaper Policy** → Standardized the desktop background for all users.  
+- **Disable Control Panel/Settings** → Restricted access for non-administrative accounts.  
+
+---
+
+## Results and Testing
+
+- Verified that the **password policy** was enforced by attempting to set a weak password, which was blocked as expected.  
+- This confirmed that Group Policies were applying correctly within the Codex Systems domain.  
+- Other policies were configured and could be expanded upon for future testing.  
+
+---
+
+## Conclusion
+
+Through this lab project, I successfully simulated the deployment of an enterprise-level **Active Directory environment** for Codex Systems.  
+
+Key achievements included:  
+- Standing up a domain controller and domain services  
+- Structuring the domain with OUs to reflect company organization  
+- Creating users and assigning them to their correct OUs  
+- Managing access with security groups  
+- Enforcing organizational standards using Group Policy  
+
+By the end of this project, Codex Systems had a functioning Active Directory environment that demonstrates core identity and access management practices.  
+
+---
+
+## Future Enhancements
+
+Additional improvements could include:  
+- Implementing a logon banner for compliance  
+- Redirecting user folders to network shares  
+- Deploying printers automatically through GPO  
+- Configuring auditing to track logon/logoff and security events  
+
 ---
 
 ## 📂 Repository Notes
 - This file (`01_AD_Setup.md`) is part of the **Codex Systems Lab Series**.  
-- Each phase will be documented in `/docs` as the environment grows:  
+- This series will be documented in `/docs` as the environment grows:  
   - `01_AD_Setup.md` → Active Directory setup  
-  - `02_GPOs.md` → Group Policy Objects  
-  - `03_Networking.md` → Networking & Security Extensions  
+  - `02_OUs_and_Users.md` → Creating OUs and Users  
+  - `03_GPO_and_Security_Groups.md` → Group Policy Objects & Security Extensions  

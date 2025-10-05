@@ -8,6 +8,13 @@
 This project documents the deployment of an **Active Directory (AD) environment** for the fictional company **Codex Systems**.  
 The goal was to simulate how a real organization would structure, secure, and manage its domain through OUs, users, security groups, and Group Policy Objects (GPOs).  
 
+
+## 📂 Repository Notes 
+- This series will be documented in `/docs` as the environment grows:  
+  - `01_AD_Setup.md` → Active Directory setup  
+  - `02_OUs_and_Users.md` → Creating OUs and Users  
+  - `03_GPO_and_Security_Groups.md` → Group Policy Objects & Security Extensions  
+
 ---
 
 ## Active Directory Setup

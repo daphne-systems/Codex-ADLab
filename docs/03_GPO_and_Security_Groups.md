@@ -1,5 +1,8 @@
 # Active Directory: GPOs, Security Groups, and Testing
 
+<img width="804" height="404" alt="image" src="https://github.com/user-attachments/assets/0c4f8439-4f87-4b58-90d9-58357384acf8" />
+
+
 Now that the domain is set up and we have OUs with users, the next step is to create **security groups**, apply **Group Policy Objects (GPOs)**, and test them to make sure everything works.
 
 ---

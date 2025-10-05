@@ -1,4 +1,7 @@
+
 # Active Directory Setup Guide
+
+<img width="909" height="511" alt="image" src="https://github.com/user-attachments/assets/8ebfc9f3-66d7-4555-b36e-ecbc1bd7f7d4" />
 
 This document outlines the steps to set up an Active Directory (AD) domain on a Windows Server 2025 environment.
 
